@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: cliente-service
+  h2:
+    console:
+      enabled: true
+      settings:
+        trace: false
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:cliente_db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  jms:
+    servicebus:
+      connection-string: "Endpoint=sb://asbteste.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=9YL8Ot1bAZaIv7b55JzQa6UxurzlinzGI4z1ZjbH5fo="
+      idle-timeout: 1800000
+      pricing-tier: "Standard"
+
+server:
+  port: 6060
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: ${EUREKA_URI:http://localhost:6060/eureka}
+#  instance:
+#    prefer-ip-address: true
+    
+error:
+ whitelabel:
+   enabled: false
+
